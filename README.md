@@ -4,7 +4,7 @@
 This library is to control LSM9DS1 sensor for m5 series, UI FLOW and micropython.
 
 I reffer https://github.com/hoihu/projects/blob/master/raspi-hat/lsm9ds1.py to make this code.
-I'd like to say thank you for https://github.com/hoihu to make such great work.
+I'd like to say thank you for https://github.com/hoihu to make such great works.
 
 ## why I made it
 I like m5 series and UI FLOW, but I cannot find any sample to use LSM9DS1 for m5 and UI FLOW.
