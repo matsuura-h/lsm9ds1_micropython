@@ -120,7 +120,7 @@ class LSM9DS1:
         i2c = self.i2c
         self.i2c.addr = self.address_magnet
         f = self.scale_factor_magnet
-        out = self.i2c.read_mem_data(OUT_M, 3, i2c_bus.INT16LE)
+        out = self.i2c.read_mem_data(OUT_M, 3, 2) #i2c_bus.INT16LE
         return (out[0]/f, out[1]/f, out[2]/f)
     
     def read_gyro(self):
@@ -128,7 +128,7 @@ class LSM9DS1:
         i2c = self.i2c
         self.i2c.addr = self.address_gyro
         f = self.scale_gyro
-        out = self.i2c.read_mem_data(OUT_G, 3, i2c_bus.INT16LE)
+        out = self.i2c.read_mem_data(OUT_G, 3, 2) #i2c_bus.INT16LE
         return (out[0]/f, out[1]/f, out[2]/f)
     
     def read_accel(self):
@@ -136,5 +136,5 @@ class LSM9DS1:
         i2c = self.i2c
         self.i2c.addr = self.address_gyro
         f = self.scale_accel
-        out = self.i2c.read_mem_data(OUT_XL, 3, i2c_bus.INT16LE)
+        out = self.i2c.read_mem_data(OUT_XL, 3, 2) #i2c_bus.INT16LE
         return (out[0]/f, out[1]/f, out[2]/f)
