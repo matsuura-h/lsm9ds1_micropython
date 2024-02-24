@@ -1,7 +1,7 @@
 ※日本語の説明は英語の下にあります。
 
 # description
-This library is control LSM9DS1 sensor for m5 series, UI FLOW and micropython.
+This library is to control LSM9DS1 sensor for m5 series, UI FLOW and micropython.
 
 I reffer https://github.com/hoihu/projects/blob/master/raspi-hat/lsm9ds1.py to make this code.
 I'd like to say thank you for https://github.com/hoihu to make such great work.
