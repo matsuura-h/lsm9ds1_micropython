@@ -48,7 +48,9 @@ class LSM9DS1:
         # angular control registers 1-3 / Orientation
         mv[0] = ((sample_rate & 0x07) << 5) | ((self.SCALE_GYRO[scale_gyro][1] & 0x3) << 3) 
         mv[1:4] = b'\x00\x00\x00'
-        i2c.write_mem_list(CTRL_REG1_G, mv[:5], 5)
+#        i2c.write_mem_list(CTRL_REG1_G, mv[:5], 5)
+        for i in range(5):
+          i2c.write_u8(CTRL_REG1_G+i, mv[i])
         # ctrl4 - enable x,y,z, outputs, no irq latching, no 4D
         # ctrl5 - enable all axes, no decimation
         # ctrl6 - set scaling and sample rate of accel 
@@ -59,7 +61,9 @@ class LSM9DS1:
         mv[3] = 0x00
         mv[4] = 0x4
         mv[5] = 0x2
-        i2c.write_mem_list(CTRL_REG4_G, mv[:6], 6)
+#        i2c.write_mem_list(CTRL_REG4_G, mv[:6], 6)
+        for i in range(6):
+          i2c.write_u8(CTRL_REG4_G+i, mv[i])
 
         # fifo: use continous mode (overwrite old data if overflow)
         i2c.write_u8(FIFO_CTRL_REG, 0x00)
@@ -83,7 +87,9 @@ class LSM9DS1:
         mv[2] = 0x00 # ctrl3: continous conversion, no low power, I2C
         mv[3] = 0x08 # ctrl4: high performance z-axis
         mv[4] = 0x00 # ctr5: no fast read, no block update
-        i2c.write_mem_list(CTRL_REG1_M, mv[:5], 5)
+#        i2c.write_mem_list(CTRL_REG1_M, mv[:5], 5)
+        for i in range(5):
+          i2c.write_u8(CTRL_REG1_M+i, mv[i])
         self.scale_factor_magnet = 32768 / ((scale_magnet+1) * 4 )
         
     def calibrate_magnet(self, offset):
