@@ -1,4 +1,4 @@
-※日本語の説明は英語の下にあります。
+※[日本語の説明](https://github.com/matsuura-h/lsm9ds1_micropython?tab=readme-ov-file#%E8%AA%AC%E6%98%8E)は英語の下にあります。
 
 # description
 This library is to control LSM9DS1 sensor for m5 series, UI FLOW and micropython.
